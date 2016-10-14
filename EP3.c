@@ -38,7 +38,14 @@ void bubbleMod (int *vet, int tam) {
 	}
 }
 
+void troca (int *vet, int i, int tam) {
+	
+	int aux;
 
+	aux = vet[i]; 
+	vet[i] = vet[(i+2)%tam]; 
+	vet[(i+2)%tam] = aux;
+}
 
 void Ordena (int *vet, int tam, int *tam_r) {
 
@@ -72,13 +79,9 @@ void Ordena (int *vet, int tam, int *tam_r) {
 
 					if (vet[i] > vet[(i+2)%tam] && i < (i+2)%tam) {
 						
-						aux = vet[i]; 
-						vet[i] = vet[(i+2)%tam]; 
-						vet[(i+2)%tam] = aux;
-						
+						troca(vet, i, tam);
 						moveu = 1;
 						
-
 						printf("cond1: ");
 						for (j = 0; j < tam; j++)
 							printf("%d ", vet[j]);
@@ -90,15 +93,14 @@ void Ordena (int *vet, int tam, int *tam_r) {
 						
 						volta = (tam)/2;
 						ida = volta - 1;
+						
 						i = (i-2)%tam;
 						if (i < 0)
 							i += tam;
 						
 						while (volta) {			
 												
-							aux = vet[(i+2)%tam]; 
-							vet[(i+2)%tam] = vet[i]; 
-							vet[i] = aux;
+							troca (vet, i, tam);
 
 							if (volta == 2)
 								start = i;
@@ -108,12 +110,10 @@ void Ordena (int *vet, int tam, int *tam_r) {
 								printf("%d ", vet[j]);
 							}
 							printf("\n");
-							
+
 							i = (i-2)%tam;
 							if (i < 0)
-								i += tam;
-							printf("prox indice %d\n", i );
-							
+								i += tam;						
 							volta--;
 							printf("volta\n");
 						}
@@ -123,8 +123,10 @@ void Ordena (int *vet, int tam, int *tam_r) {
 							
 						printf("\n");
 						
+						i = start;
+						
 						while (ida) {
-							i = start;
+
 							printf("indice %d\n", i );
 							aux = vet[i]; 
 							printf("o que esta no indice %d\n", aux );
@@ -141,7 +143,7 @@ void Ordena (int *vet, int tam, int *tam_r) {
 							printf("%d ", vet[j]);
 						printf("\n");
 						moveu = 1;
-						return;
+						
 					}				
 				}
 			}
