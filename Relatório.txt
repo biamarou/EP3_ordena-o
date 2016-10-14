@@ -1,0 +1,11 @@
+Relatório do EP3 de MAC0121
+
+Análises
+
+Quando o vetor possui um número ímpar de elementos, sempre será possível ordená-lo.
+Também podemos dividir em casos:
+	Quando a ordem está simplesmente invertida, há uma fórmula pronta para ordenar:
+		Aplicar um bubble sort modificado para o vetor e reduzir seu tamanho em dois, 
+		reaplicar até o tamanho chegar em três e aplicar uma última vez.
+
+	Quando queremos colocar  
