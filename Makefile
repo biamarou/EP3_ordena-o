@@ -1,7 +1,7 @@
 CC:=gcc
 CFLAGS:=-Wall -pedantic -ansi -g -O2
 
-restaUm: EP3.c
+tresReversao: EP3.c
 	$(CC) $(CFLAGS) -o $@ $^
 
 %.o: %.c
