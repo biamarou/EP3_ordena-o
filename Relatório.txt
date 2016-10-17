@@ -8,4 +8,17 @@ Também podemos dividir em casos:
 		Aplicar um bubble sort modificado para o vetor e reduzir seu tamanho em dois, 
 		reaplicar até o tamanho chegar em três e aplicar uma última vez.
 
-	Quando queremos colocar  
+	Quando não há um "padrão de desordenação" o algoritmo seguirá os seguintes passos:
+		Verificar se é possível aplicar a tresreversão diretamente, ou seja, temos a 
+		sequência de números 'c', 'b', 'a' que se torna 'a', 'b', 'c';
+
+		Verificar se dois números em sequência estão desordenados, e aplicar uma sequência 
+		pré-definida de tresreversões, que fará com que os números troquem de lugar. Essa
+		sequência de rotações 
+			
+			Exemplo de um caso simples num vetor de tamanho 5:
+			1 2 3 5 4 -> trv em 1 -> 1 5 3 2 4 -> trv em 4 -> 1 4 3 2 5 -> trv em 1 -> 1 2 3 4 5
+				
+				
+				
+
